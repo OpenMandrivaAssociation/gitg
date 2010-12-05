@@ -1,6 +1,6 @@
 Name:           gitg
 Version:        0.0.6
-Release:        %mkrel 4
+Release:        %mkrel 5
 Summary:        GTK+ graphical interface for the git revision control system
 
 Group:          Graphical desktop/GNOME
