@@ -4,7 +4,7 @@
 %define develname %mklibname -d %name
 
 Name:           gitg
-Version:        0.0.7
+Version:        0.0.8
 Release:        %mkrel 1
 Summary:        GTK+ graphical interface for the git revision control system
 
