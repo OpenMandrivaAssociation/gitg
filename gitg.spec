@@ -4,7 +4,7 @@
 %define develname %mklibname -d %name
 
 Name:           gitg
-Version:        0.0.8
+Version:        0.1.0
 Release:        %mkrel 1
 Summary:        GTK+ graphical interface for the git revision control system
 
@@ -18,9 +18,8 @@ BuildRequires:  dbus-devel
 BuildRequires:  libGConf2-devel
 BuildRequires:  gtk2-devel
 BuildRequires:  gtksourceview-devel
+BuildRequires:  gsettings-desktop-schemas-devel
 BuildRequires:  intltool
-
-Requires(preun): GConf2
 Requires:       git
 Requires:	%libname >= %version-%release
 
@@ -54,7 +53,7 @@ graphical presentation.
 
 
 %build
-%configure2_5x --disable-schemas-install --disable-static
+%configure2_5x --disable-static
 %make
 
 
@@ -67,10 +66,6 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-
-%preun
-%preun_uninstall_gconf_schemas %name
-
 %files -f %{name}.lang
 %defattr(-,root,root,-)
 %doc AUTHORS NEWS README
@@ -78,9 +73,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/gitg
 %_datadir/icons/hicolor/*/apps/gitg*
 %{_datadir}/gitg
+%_datadir/glib-2.0/schemas/org.gnome.gitg.gschema.xml
 %{_mandir}/man1/gitg.1*
 
-%{_sysconfdir}/gconf/schemas/gitg.schemas
 %{_datadir}/applications/gitg.desktop
 
 %files -n %libname
