@@ -89,5 +89,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc ChangeLog
 %_includedir/libgitg-%api
 %_libdir/libgitg-%api.so
-%_libdir/libgitg-%api.la
 %_libdir/pkgconfig/libgitg-%api.pc
