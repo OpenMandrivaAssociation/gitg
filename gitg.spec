@@ -16,9 +16,11 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
 BuildRequires:  dbus-devel
 BuildRequires:  libGConf2-devel
+BuildRequires:  glib2-devel >= 1:2.26
 BuildRequires:  gtk+3-devel
-BuildRequires:  gtksourceview3-devel
+BuildRequires:  gtksourceview3-devel >= 3.1.3
 BuildRequires:  gsettings-desktop-schemas-devel
+BuildRequires:  pkgconfig(gladeui-2.0)
 BuildRequires:  intltool
 Requires:       git
 Requires:	%libname >= %version-%release
@@ -53,7 +55,7 @@ graphical presentation.
 
 
 %build
-%configure2_5x --disable-static
+%configure2_5x --disable-static --disable-maintainer-mode
 %make
 
 
