@@ -4,20 +4,20 @@
 %define develname %mklibname -d %name
 
 Name:           gitg
-Version:        0.1.2
+Version:        0.2.5
 Release:        %mkrel 1
 Summary:        GTK+ graphical interface for the git revision control system
 
 Group:          Graphical desktop/GNOME
 License:        GPLv2+
 URL:            http://trac.novowork.com/gitg
-Source0:        http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
+Source0:        http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.xz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
 BuildRequires:  dbus-devel
 BuildRequires:  libGConf2-devel
-BuildRequires:  gtk2-devel
-BuildRequires:  gtksourceview-devel
+BuildRequires:  gtk+3-devel
+BuildRequires:  gtksourceview3-devel
 BuildRequires:  gsettings-desktop-schemas-devel
 BuildRequires:  intltool
 Requires:       git
