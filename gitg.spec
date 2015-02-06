@@ -5,7 +5,7 @@
 
 Name:           gitg
 Version:        0.2.5
-Release:        %mkrel 1
+Release:        2
 Summary:        GTK+ graphical interface for the git revision control system
 
 Group:          Graphical desktop/GNOME
