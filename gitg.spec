@@ -15,12 +15,18 @@ Source0:        http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
 BuildRequires:  dbus-devel
-BuildRequires:  libGConf2-devel
-BuildRequires:  glib2-devel >= 1:2.26
-BuildRequires:  gtk+3-devel
-BuildRequires:  gtksourceview3-devel >= 3.1.3
-BuildRequires:  gsettings-desktop-schemas-devel
-BuildRequires:  pkgconfig(gladeui-2.0)
+BuildRequires:	pkgconfig(gee-0.8)
+BuildRequires:  pkgconfig(glib-2.0)
+BuildRequires:  pkgconfig(gtk+-3.0)
+BuildRequires:  pkgconfig(gtksourceview-3.0)
+BuildRequires:  pkgconfig(gsettings-desktop-schemas)
+BuildRequires:	pkgconfig(json-glib-1.0)
+BuildRequires:	pkgconfig(libgit2-glib-1.0)
+BuildRequires:	pkgconfig(libpeas-1.0)
+BuildRequires:	pkgconfig(libsecret-1)
+BuildRequires:	pkgconfig(gtkspell3-3.0)
+BuildRequires:	pkgconfig(gobject-introspection-1.0)
+BuildRequires:	pkgconfig(webkit2gtk-4.0)
 BuildRequires:  intltool
 Requires:       git
 Requires:	%libname >= %version-%release
@@ -55,21 +61,16 @@ graphical presentation.
 
 
 %build
-%configure2_5x --disable-static --disable-maintainer-mode
+%configure --disable-maintainer-mode
 %make
 
 
 %install
-rm -rf $RPM_BUILD_ROOT
 %makeinstall_std
 %find_lang %{name}
 
 
-%clean
-rm -rf $RPM_BUILD_ROOT
-
 %files -f %{name}.lang
-%defattr(-,root,root,-)
 %doc AUTHORS NEWS README
 
 %{_bindir}/gitg
@@ -81,11 +82,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/gitg.desktop
 
 %files -n %libname
-%defattr(-,root,root,-)
 %_libdir/libgitg-%api.so.%{major}*
 
 %files -n %develname
-%defattr(-,root,root,-)
 %doc ChangeLog
 %_includedir/libgitg-%api
 %_libdir/libgitg-%api.so
