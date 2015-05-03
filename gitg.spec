@@ -61,7 +61,8 @@ graphical presentation.
 
 
 %build
-%configure --disable-maintainer-mode
+export CFLAGS=-Wno-error
+%configure --disable-maintainer-mode --enable-compile-warnings=no --disable-introspection
 %make
 
 
@@ -76,16 +77,23 @@ graphical presentation.
 %{_bindir}/gitg
 %_datadir/icons/hicolor/*/apps/gitg*
 %{_datadir}/gitg
+%{_libdir}/gitg
 %_datadir/glib-2.0/schemas/org.gnome.gitg.gschema.xml
+%_datadir/appdata/gitg.appdata.xml
 %{_mandir}/man1/gitg.1*
+%{_libdir}/girepository-1.0/*.typelib
 
 %{_datadir}/applications/gitg.desktop
 
 %files -n %libname
 %_libdir/libgitg-%api.so.%{major}*
+%_libdir/libgitg-ext-%api.so.%{major}*
 
 %files -n %develname
 %doc ChangeLog
 %_includedir/libgitg-%api
+%_includedir/libgitg-ext-%api
 %_libdir/libgitg-%api.so
-%_libdir/pkgconfig/libgitg-%api.pc
+%_libdir/libgitg-ext-%api.so
+%_libdir/pkgconfig/libgitg*-%api.pc
+%_datadir/gir-1.0/*.gir
