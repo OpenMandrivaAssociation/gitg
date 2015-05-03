@@ -27,6 +27,7 @@ BuildRequires:	pkgconfig(libsecret-1)
 BuildRequires:	pkgconfig(gtkspell3-3.0)
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
 BuildRequires:	pkgconfig(webkit2gtk-4.0)
+BuildRequires:	pkgconfig(webkit2gtk-3.0)
 BuildRequires:	pkgconfig(vapigen)
 BuildRequires:  intltool
 Requires:       git
