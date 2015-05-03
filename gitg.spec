@@ -27,6 +27,7 @@ BuildRequires:	pkgconfig(libsecret-1)
 BuildRequires:	pkgconfig(gtkspell3-3.0)
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
 BuildRequires:	pkgconfig(webkit2gtk-4.0)
+BuildRequires:	pkgconfig(vapigen)
 BuildRequires:  intltool
 Requires:       git
 Requires:	%libname >= %version-%release
@@ -97,3 +98,4 @@ export CFLAGS=-Wno-error
 %_libdir/libgitg-ext-%api.so
 %_libdir/pkgconfig/libgitg*-%api.pc
 %_datadir/gir-1.0/*.gir
+%_datadir/vala/vapi/*.vapi
