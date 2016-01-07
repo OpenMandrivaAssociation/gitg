@@ -4,7 +4,7 @@
 %define develname %mklibname -d %name
 
 Name:           gitg
-Version:         3.18.0
+Version:        3.18.0
 Release:        2
 Summary:        GTK+ graphical interface for the git revision control system
 
@@ -12,7 +12,6 @@ Group:          Graphical desktop/GNOME
 License:        GPLv2+
 URL:            http://trac.novowork.com/gitg
 Source0:        http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.xz
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
 BuildRequires:  dbus-devel
 BuildRequires:	pkgconfig(gee-0.8)
@@ -27,8 +26,8 @@ BuildRequires:	pkgconfig(libsecret-1)
 BuildRequires:	pkgconfig(gtkspell3-3.0)
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
 BuildRequires:	pkgconfig(webkit2gtk-4.0)
-BuildRequires:	pkgconfig(webkit2gtk-3.0)
 BuildRequires:	pkgconfig(vapigen)
+BuildRequires:	pkgconfig(gcr-base-3)
 BuildRequires:  intltool
 Requires:       git
 Requires:	%libname >= %version-%release
