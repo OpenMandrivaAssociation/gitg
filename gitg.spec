@@ -29,6 +29,7 @@ BuildRequires:	pkgconfig(webkit2gtk-4.0)
 BuildRequires:	pkgconfig(vapigen)
 BuildRequires:	pkgconfig(gcr-base-3)
 BuildRequires:  intltool
+BuildRequires:  meson
 Requires:       git
 Requires:	%libname >= %version-%release
 
@@ -62,13 +63,11 @@ graphical presentation.
 
 
 %build
-export CFLAGS=-Wno-error
-%configure --disable-maintainer-mode --enable-compile-warnings=no --disable-introspection
-%make
-
+%meson
+%meson_build
 
 %install
-%makeinstall_std
+%meson_install
 %find_lang %{name}
 
 
