@@ -4,14 +4,15 @@
 %define develname %mklibname -d %name
 
 Name:           gitg
-Version:        3.18.0
-Release:        2
+Version:        3.30.0
+Release:        1
 Summary:        GTK+ graphical interface for the git revision control system
 
 Group:          Graphical desktop/GNOME
 License:        GPLv2+
 URL:            http://trac.novowork.com/gitg
 Source0:        http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.xz
+Patch0:         gitg-fix-build-with-libgit2.patch
 
 BuildRequires:  dbus-devel
 BuildRequires:	pkgconfig(gee-0.8)
@@ -29,6 +30,7 @@ BuildRequires:	pkgconfig(webkit2gtk-4.0)
 BuildRequires:	pkgconfig(vapigen)
 BuildRequires:	pkgconfig(gcr-base-3)
 BuildRequires:  intltool
+BuildRequires:  meson
 Requires:       git
 Requires:	%libname >= %version-%release
 
@@ -59,16 +61,15 @@ graphical presentation.
 
 %prep
 %setup -q
+%patch0 -p0
 
 
 %build
-export CFLAGS=-Wno-error
-%configure --disable-maintainer-mode --enable-compile-warnings=no --disable-introspection
-%make
-
+%meson
+%meson_build
 
 %install
-%makeinstall_std
+%meson_install
 %find_lang %{name}
 
 
@@ -80,9 +81,11 @@ export CFLAGS=-Wno-error
 %{_datadir}/gitg
 %{_libdir}/gitg
 %_datadir/glib-2.0/schemas/org.gnome.gitg.gschema.xml
-%_datadir/appdata/gitg.appdata.xml
+#_datadir/appdata/gitg.appdata.xml
 %{_mandir}/man1/gitg.1*
 %{_libdir}/girepository-1.0/*.typelib
+%{_datadir}/metainfo/gitg.appdata.xml
+%{python3_sitelib}/gi/overrides/*
 
 %{_datadir}/applications/gitg.desktop
 
@@ -99,3 +102,4 @@ export CFLAGS=-Wno-error
 %_libdir/pkgconfig/libgitg*-%api.pc
 %_datadir/gir-1.0/*.gir
 %_datadir/vala/vapi/*.vapi
+%{_datadir}/glade/catalogs/gitg-glade.xml
