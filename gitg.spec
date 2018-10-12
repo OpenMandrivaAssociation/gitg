@@ -81,7 +81,7 @@ graphical presentation.
 %{_datadir}/gitg
 %{_libdir}/gitg
 %_datadir/glib-2.0/schemas/org.gnome.gitg.gschema.xml
-%_datadir/appdata/gitg.appdata.xml
+#_datadir/appdata/gitg.appdata.xml
 %{_mandir}/man1/gitg.1*
 %{_libdir}/girepository-1.0/*.typelib
 
