@@ -84,6 +84,8 @@ graphical presentation.
 #_datadir/appdata/gitg.appdata.xml
 %{_mandir}/man1/gitg.1*
 %{_libdir}/girepository-1.0/*.typelib
+%{_datadir}/metainfo/gitg.appdata.xml
+%{python3_sitelib}/gi/overrides/*
 
 %{_datadir}/applications/gitg.desktop
 
@@ -100,3 +102,4 @@ graphical presentation.
 %_libdir/pkgconfig/libgitg*-%api.pc
 %_datadir/gir-1.0/*.gir
 %_datadir/vala/vapi/*.vapi
+%{_datadir}/glade/catalogs/gitg-glade.xml
