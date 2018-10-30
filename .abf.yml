@@ -3,3 +3,4 @@ removed_sources:
   gitg-3.18.0.tar.xz: cc0e748f16570b71b6f1f9d010b55e1b617f338c
 sources:
   gitg-3.30.0.tar.xz: 554abd91e1e14e80b6604eb9059e979f1ca025bf
+  gitg-3.30.1.tar.xz: ea1ec7bdd859560b0885b375e6a33ddd3337a884
