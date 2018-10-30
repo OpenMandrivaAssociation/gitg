@@ -97,7 +97,7 @@ graphical presentation.
 %doc ChangeLog
 #_includedir/libgitg-%api
 #_includedir/libgitg-ext-%api
-%{_libdir}/%{name}-%{api}.so
+%{_libdir}/lib%{name}-%{api}.so
 %{_libdir}/libgitg-ext-%{api}.so
 %_libdir/pkgconfig/libgitg*-%api.pc
 #_datadir/gir-1.0/*.gir
