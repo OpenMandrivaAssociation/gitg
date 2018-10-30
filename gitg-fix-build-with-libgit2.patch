@@ -2,7 +2,7 @@ Index: meson.build
 ===================================================================
 --- meson.build
 +++ meson.build	2018-10-12 03:20:23.392432284 +0200
-@@ -116,7 +116,7 @@
+@@ -133,7 +133,7 @@
  glib_dep = dependency('glib-2.0', version: glib_req_version)
  gtk_dep = dependency('gtk+-3.0', version: '>= 3.20.0')
  gtksourceview_dep = dependency('gtksourceview-3.0', version: '>= 3.10')
