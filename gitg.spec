@@ -97,8 +97,8 @@ graphical presentation.
 %doc ChangeLog
 #_includedir/libgitg-%api
 #_includedir/libgitg-ext-%api
-#_libdir/libgitg-%api.so
-#_libdir/libgitg-ext-%api.so
+%{_libdir}/%{name}-%{api}.so
+%{_libdir}/libgitg-ext-%{api}.so
 %_libdir/pkgconfig/libgitg*-%api.pc
 #_datadir/gir-1.0/*.gir
 #_datadir/vala/vapi/*.vapi
