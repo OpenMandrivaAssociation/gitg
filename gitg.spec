@@ -95,8 +95,8 @@ graphical presentation.
 
 %files -n %develname
 %doc ChangeLog
-%_includedir/libgitg-%api
-%_includedir/libgitg-ext-%api
+#_includedir/libgitg-%api
+#_includedir/libgitg-ext-%api
 #_libdir/libgitg-%api.so
 #_libdir/libgitg-ext-%api.so
 %_libdir/pkgconfig/libgitg*-%api.pc
