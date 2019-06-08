@@ -2,7 +2,7 @@
 %define major 0
 %define libname %mklibname %name %api %major
 %define develname %mklibname -d %name
-%define girname	%mklibname %{name}-gir %{gmajor}
+%define girname	%mklibname %{name}-gir %{api}
 
 Name:           gitg
 Version:        3.32.0
@@ -108,13 +108,13 @@ GObject Introspection interface description for %{name}.
 
 %files -n %develname
 %doc ChangeLog
-#_includedir/libgitg-%api
-#_includedir/libgitg-ext-%api
+%{_includedir}/libgitg-%api/*/*
+%{_includedir}/libgitg-ext-%api/*/*
 %{_libdir}/lib%{name}-%{api}.so
 %{_libdir}/libgitg-ext-%{api}.so
 %_libdir/pkgconfig/libgitg*-%api.pc
-#_datadir/gir-1.0/*.gir
-#_datadir/vala/vapi/*.vapi
+%_datadir/gir-1.0/*.gir
+%_datadir/vala/vapi/*.vapi
 %{_datadir}/glade/catalogs/gitg-glade.xml
 
 %files -n %{girname}
