@@ -4,7 +4,7 @@
 %define develname %mklibname -d %name
 
 Name:           gitg
-Version:        3.30.1
+Version:        3.32.0
 Release:        1
 Summary:        GTK+ graphical interface for the git revision control system
 
@@ -12,7 +12,7 @@ Group:          Graphical desktop/GNOME
 License:        GPLv2+
 URL:            http://trac.novowork.com/gitg
 Source0:        http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.xz
-Patch0:         gitg-fix-build-with-libgit2.patch
+#Patch0:         gitg-fix-build-with-libgit2.patch
 
 BuildRequires:  dbus-devel
 BuildRequires:	pkgconfig(gee-0.8)
@@ -61,7 +61,7 @@ graphical presentation.
 
 %prep
 %setup -q
-%patch0 -p0
+#patch0 -p0
 
 
 %build
