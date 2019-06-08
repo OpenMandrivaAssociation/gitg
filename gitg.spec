@@ -21,6 +21,7 @@ BuildRequires:  pkgconfig(gtk+-3.0)
 BuildRequires:  pkgconfig(gtksourceview-3.0)
 BuildRequires:  pkgconfig(gsettings-desktop-schemas)
 BuildRequires:	pkgconfig(json-glib-1.0)
+BuildRequires:  pkgconfig(libdazzle-1.0)
 BuildRequires:	pkgconfig(libgit2-glib-1.0)
 BuildRequires:	pkgconfig(libpeas-1.0)
 BuildRequires:	pkgconfig(libsecret-1)
@@ -32,6 +33,9 @@ BuildRequires:	pkgconfig(gcr-base-3)
 BuildRequires:  intltool
 BuildRequires:  meson
 Requires:       git
+Requires:	gsettings-desktop-schemas
+Requires:	typelib(Peas)
+Requires:	typelib(PeasGtk)
 Requires:	%libname >= %version-%release
 
 %description
