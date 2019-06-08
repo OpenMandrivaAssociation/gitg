@@ -2,6 +2,7 @@
 %define major 0
 %define libname %mklibname %name %api %major
 %define develname %mklibname -d %name
+%define girname	%mklibname %{name}-gir %{gmajor}
 
 Name:           gitg
 Version:        3.32.0
@@ -56,12 +57,22 @@ graphical presentation.
 Group: Development/C
 Summary: Development library parts of %name
 Requires: %libname = %version-%release
+Requires:	%{girname} = %{version}-%{release}
 Provides: libgitg-devel = %version-%release
 
 %description -n %develname
 gitg is a GitX clone for GNOME/gtk+. It aims at being a small, fast and
 convenient tool to visualize git history and actions that benefit from a
 graphical presentation.
+
+%package -n %{girname}
+Summary:	GObject Introspection interface description for %{name}
+Group:		System/Libraries
+Requires:	%{libname} = %{version}-%{release}
+
+%description -n %{girname}
+GObject Introspection interface description for %{name}.
+
 
 %prep
 %setup -q
@@ -78,20 +89,18 @@ graphical presentation.
 
 
 %files -f %{name}.lang
-%doc AUTHORS NEWS README
+%doc AUTHORS NEWS README.md
 
 %{_bindir}/gitg
-%_datadir/icons/hicolor/*/apps/gitg*
+%_datadir/icons/hicolor/*/apps/*
 %{_datadir}/gitg
 %{_libdir}/gitg
 %_datadir/glib-2.0/schemas/org.gnome.gitg.gschema.xml
-#_datadir/appdata/gitg.appdata.xml
 %{_mandir}/man1/gitg.1*
-%{_libdir}/girepository-1.0/*.typelib
-%{_datadir}/metainfo/gitg.appdata.xml
+%{_datadir}/metainfo/org.gnome.gitg.appdata.xml
 %{python3_sitelib}/gi/overrides/*
 
-%{_datadir}/applications/gitg.desktop
+%{_datadir}/applications/org.gnome.gitg.desktop
 
 %files -n %libname
 %_libdir/libgitg-%api.so.%{major}*
@@ -107,3 +116,6 @@ graphical presentation.
 #_datadir/gir-1.0/*.gir
 #_datadir/vala/vapi/*.vapi
 %{_datadir}/glade/catalogs/gitg-glade.xml
+
+%files -n %{girname}
+%{_libdir}/girepository-1.0/*.typelib
