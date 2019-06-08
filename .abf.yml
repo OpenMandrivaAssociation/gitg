@@ -1,6 +1,2 @@
-removed_sources:
-  gitg-3.16.1.tar.xz: 213d1be53ccbd9ac751c135300f6f4502f5faf08
-  gitg-3.18.0.tar.xz: cc0e748f16570b71b6f1f9d010b55e1b617f338c
 sources:
-  gitg-3.30.0.tar.xz: 554abd91e1e14e80b6604eb9059e979f1ca025bf
-  gitg-3.30.1.tar.xz: ea1ec7bdd859560b0885b375e6a33ddd3337a884
+  gitg-3.32.0.tar.xz: efd0bcf08c47b90044dd703e11865ad2f0b5616d
