@@ -80,6 +80,8 @@ GObject Introspection interface description for %{name}.
 
 
 %build
+# For some reason (unknown to me) gitg crashing at launch without any details. 
+# Is not possible to run package compiled with Clang 8 or 9. Only GCC fix it (angry)
 export CC=gcc
 export CXX=g++
 %meson
