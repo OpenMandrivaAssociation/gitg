@@ -5,7 +5,7 @@
 %define girname	%mklibname %{name}-gir %{api}
 
 Name:           gitg
-Version:        3.32.0
+Version:        3.32.1
 Release:        1
 Summary:        GTK+ graphical interface for the git revision control system
 
@@ -80,6 +80,8 @@ GObject Introspection interface description for %{name}.
 
 
 %build
+export CC=gcc
+export CXX=g++
 %meson
 %meson_build
 
