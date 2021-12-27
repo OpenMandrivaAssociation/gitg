@@ -38,7 +38,7 @@ Requires:       git
 Requires:	gsettings-desktop-schemas
 Requires:	typelib(Peas)
 Requires:	typelib(PeasGtk)
-Requires:	%libname >= %version-%release
+Requires: %libname = %version-%release
 
 %description
 gitg is a GitX clone for GNOME/gtk+. It aims at being a small, fast and
