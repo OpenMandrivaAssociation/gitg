@@ -31,6 +31,7 @@ BuildRequires:	pkgconfig(gobject-introspection-1.0)
 BuildRequires:	pkgconfig(webkit2gtk-4.0)
 BuildRequires:	pkgconfig(vapigen)
 BuildRequires:	pkgconfig(gcr-base-3)
+BuildRequires:  pkgconfig(gspell-1)
 BuildRequires:  intltool
 BuildRequires:  meson
 Requires:       git
