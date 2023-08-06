@@ -87,7 +87,7 @@ GObject Introspection interface description for %{name}.
 # Is not possible to run package compiled with Clang 8 or 9. Only GCC fix it (angry)
 export CC=gcc
 export CXX=g++
-%meson
+%meson -Doutputs=true
 %meson_build
 
 %install
