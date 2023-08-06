@@ -33,6 +33,7 @@ BuildRequires:	pkgconfig(webkit2gtk-4.0)
 BuildRequires:	pkgconfig(vapigen)
 BuildRequires:	pkgconfig(gcr-base-3)
 BuildRequires:  pkgconfig(gspell-1)
+BuildRequires:  pkgconfig(gpgme)
 BuildRequires:  intltool
 BuildRequires:  meson
 Requires:       git
