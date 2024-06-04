@@ -1,3 +1,4 @@
+%global __requires_exclude libgitg-1.0()|libgitg-ext-1.0
 %define api 1.0
 %define major 0
 %define libname %mklibname %name %api %major
