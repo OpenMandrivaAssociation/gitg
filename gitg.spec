@@ -40,7 +40,7 @@ Requires:       git
 Requires:	gsettings-desktop-schemas
 Requires:	typelib(Peas)
 Requires:	typelib(PeasGtk)
-Requires: %libname = %version-%release
+#Requires: %libname = %version-%release
 
 %description
 gitg is a GitX clone for GNOME/gtk+. It aims at being a small, fast and
@@ -59,8 +59,8 @@ graphical presentation.
 %package -n %develname
 Group: Development/C
 Summary: Development library parts of %name
-Requires: %libname = %version-%release
-Requires:	%{girname} = %{version}-%{release}
+#Requires: %libname = %version-%release
+#Requires:	%{girname} = %{version}-%{release}
 Provides: libgitg-devel = %version-%release
 
 %description -n %develname
@@ -71,7 +71,7 @@ graphical presentation.
 %package -n %{girname}
 Summary:	GObject Introspection interface description for %{name}
 Group:		System/Libraries
-Requires: %libname = %version-%release
+#Requires: %libname = %version-%release
 
 %description -n %{girname}
 GObject Introspection interface description for %{name}.
