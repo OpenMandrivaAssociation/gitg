@@ -7,7 +7,7 @@
 
 Name:           gitg
 Version:        44
-Release:        5
+Release:        6
 Summary:        GTK+ graphical interface for the git revision control system
 
 Group:          Graphical desktop/GNOME
