@@ -14,6 +14,8 @@ Group:          Graphical desktop/GNOME
 License:        GPLv2+
 URL:            https://trac.novowork.com/gitg
 Source0:        https://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.xz
+# from fedora
+Patch0:         girepository-fix.patch
 
 BuildRequires:  dbus-devel
 BuildRequires:	pkgconfig(gee-0.8)
