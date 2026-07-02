@@ -6,8 +6,8 @@
 %define girname	%mklibname %{name}-gir %{api}
 
 Name:           gitg
-Version:        44
-Release:        7
+Version:        50
+Release:        1
 Summary:        GTK+ graphical interface for the git revision control system
 
 Group:          Graphical desktop/GNOME
