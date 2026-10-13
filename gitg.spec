@@ -104,7 +104,7 @@ GObject Introspection interface description for %{name}.
 %{_libdir}/gitg
 %_datadir/glib-2.0/schemas/org.gnome.gitg.gschema.xml
 %{_mandir}/man1/gitg.1*
-%{_datadir}/metainfo/org.gnome.gitg.appdata.xml
+%{_datadir}/metainfo/org.gnome.gitg.metainfo.xml
 %{python_sitelib}/gi/overrides/*
 %{_datadir}/applications/org.gnome.gitg.desktop
 
