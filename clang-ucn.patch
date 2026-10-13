@@ -1,0 +1,20 @@
+--- a/gitg/gitg-result-dialog.vala	2026-10-13 04:30:26.687338287 +0200
++++ b/gitg/gitg-result-dialog.vala	2026-10-13 04:30:26.691402854 +0200
+@@ -90,7 +90,7 @@
+ 		int fg = -1;
+ 
+ 		while (p < len) {
+-			int escpos = s.index_of ("\u001b", p);
++			int escpos = s.index_of ("\x1b", p);
+ 			if (escpos < 0) {
+ 				// no more escapes — insert remainder
+ 				string seg = s.substring (p, len - p);
+@@ -147,7 +147,7 @@
+ 			} else {
+ 				print("unsupported ");
+ 				// not a supported escape sequence, insert ESC as literal
+-				insert_with_tag ("\u001b", bold, underline, fg);
++				insert_with_tag ("\x1b", bold, underline, fg);
+ 				p = escpos + 1;
+ 			}
+ 		}
